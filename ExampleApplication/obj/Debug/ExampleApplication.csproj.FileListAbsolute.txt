@@ -1,0 +1,10 @@
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.csprojResolveAssemblyReference.cache
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Properties.Resources.resources
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.csproj.GenerateResource.Cache
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\bin\Debug\ExampleApplication.exe
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\bin\Debug\ExampleApplication.pdb
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\bin\Debug\AmigaControls.dll
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\bin\Debug\AmigaControls.pdb
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.exe
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.pdb
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Form1.resources

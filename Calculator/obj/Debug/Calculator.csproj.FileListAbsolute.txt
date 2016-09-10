@@ -1,0 +1,10 @@
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\bin\Debug\Calculator.exe
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\bin\Debug\Calculator.pdb
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\bin\Debug\AmigaControls.dll
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\bin\Debug\AmigaControls.pdb
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\obj\Debug\Calculator.exe
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\Calculator\obj\Debug\Calculator.pdb

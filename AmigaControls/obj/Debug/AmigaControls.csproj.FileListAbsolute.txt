@@ -1,0 +1,10 @@
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\obj\Debug\migControls.migButton.resources
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\obj\Debug\migControls.migListView.resources
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\obj\Debug\AmigaControls.miscResources.resources
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csproj.GenerateResource.Cache
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\bin\Debug\AmigaControls.dll
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\bin\Debug\AmigaControls.pdb
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\obj\Debug\migControls.CustomScrollbar.resources
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\obj\Debug\AmigaControls.dll
+c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\obj\Debug\AmigaControls.pdb
+C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csprojResolveAssemblyReference.cache

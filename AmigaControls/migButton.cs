@@ -60,7 +60,7 @@ namespace migControls
         protected override void OnPaint(PaintEventArgs pevent)
         {
             pevent.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
-            Size tSize = TextRenderer.MeasureText(this.Text,  globalMig.topaz_std14);
+            Size tSize = TextRenderer.MeasureText(this.Text,  globalMig.topaz_std10);
 
             Rectangle rtMain = this.DisplayRectangle;
 
@@ -74,7 +74,7 @@ namespace migControls
             int textX = (rtMain.Width / 2) - (tSize.Width/2) +4;
             int textY = (rtMain.Height / 2) - (tSize.Height / 2)+2;
 
-            pevent.Graphics.DrawString(this.Text, globalMig.topaz_std14, currentBrush, textX, textY, StringFormat.GenericTypographic);
+            pevent.Graphics.DrawString(this.Text, globalMig.topaz_std10, currentBrush, textX, textY, StringFormat.GenericTypographic);
 
         }
 

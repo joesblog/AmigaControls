@@ -8,3 +8,13 @@ c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplicat
 c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.exe
 c:\users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.pdb
 C:\Users\joe\documents\visual studio 2015\Projects\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Form1.resources
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.exe
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.pdb
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\bin\Debug\ExampleApplication.exe
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\bin\Debug\ExampleApplication.pdb
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\bin\Debug\AmigaControls.dll
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\bin\Debug\AmigaControls.pdb
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.csprojResolveAssemblyReference.cache
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Form1.resources
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Properties.Resources.resources
+C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.csproj.GenerateResource.Cache

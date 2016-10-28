@@ -18,9 +18,10 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -47,6 +48,14 @@
     <Compile Include="CustomScrollbar.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="dialogs\Dialogs.cs" />
+    <Compile Include="dialogs\folderDialog.cs" />
+    <Compile Include="dialogs\migFolderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialogs\migFolderDialog.Designer.cs">
+      <DependentUpon>migFolderDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="globalMig.cs" />
     <Compile Include="migButton.cs">
       <SubType>Component</SubType>
@@ -63,11 +72,23 @@
     <Compile Include="migListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="migProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="migRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="migTabContainer.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="migTextBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dialogs\migRequester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialogs\migRequester.Designer.cs">
+      <DependentUpon>migRequester.cs</DependentUpon>
     </Compile>
     <Compile Include="miscResources.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +96,12 @@
   <ItemGroup>
     <EmbeddedResource Include="CustomScrollbar.resx">
       <DependentUpon>CustomScrollbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dialogs\migFolderDialog.resx">
+      <DependentUpon>migFolderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dialogs\migRequester.resx">
+      <DependentUpon>migRequester.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="migButton.resx">
       <DependentUpon>migButton.cs</DependentUpon>
@@ -89,6 +116,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amigacur.png" />
+    <EmbeddedResource Include="amigaIcon2.cur" />
+    <EmbeddedResource Include="wb13Pointer.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -18,3 +18,15 @@ C:\vs2015\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.misc
 C:\vs2015\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csproj.GenerateResource.Cache
 C:\vs2015\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.dll
 C:\vs2015\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.pdb
+C:\VS2015\AmigaControls\AmigaControls\bin\Debug\AmigaControls.dll
+C:\VS2015\AmigaControls\AmigaControls\bin\Debug\AmigaControls.pdb
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.CustomScrollbar.resources
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.migButton.resources
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.migListView.resources
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.miscResources.resources
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csproj.GenerateResource.Cache
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.dll
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.pdb
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.migFolderDialog.resources
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.migRequester.resources
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csprojResolveAssemblyReference.cache

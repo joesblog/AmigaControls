@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace migControls
 {
-    public class migform : System.Windows.Forms.Form
+    public class migform : Form
     {
 
 
@@ -36,21 +36,38 @@ namespace migControls
         protected override void OnLoad(EventArgs e)
         {
 
+
             globalMig.LoadFont();
             if (setAllFonts)
             {
                 setFonts(this);
 
             }
+            try
+            {
 
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.BackColor = Color.FromArgb(255, 0, 85, 169);
 
+                //this.Cursor = globalMig.amiCur;
+            }
+            catch (Exception ep)
+            {
+            }
+            if (!globalMig.loadBoringWindows)
+            {
+
+
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.BackColor = globalMig.stdColorBlue;
+            }
+            else {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.BackColor = System.Drawing.SystemColors.Control;
+            }
             base.OnLoad(e);
         }
 
 
-        public void setFonts(Control root)
+        public void setFonts(System.Windows.Forms.Control root)
         {
             root.Font = new Font(globalMig.fonts.Families[0], 12);
             if (root.GetType() == typeof(Label))
@@ -66,20 +83,51 @@ namespace migControls
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Point pLeftBorderStart = new Point(this.DisplayRectangle.Left + 5, this.DisplayRectangle.Location.Y);
-            Point pRightBorderStart = new Point(this.DisplayRectangle.Left + 5, this.DisplayRectangle.Height);
-            Pen wPen = new Pen(Color.Red, 1);
+
+            if (!globalMig.loadBoringWindows)
+            {
+
+
+                Point pLeftBorderStart = new Point(this.DisplayRectangle.Left + 5, this.DisplayRectangle.Location.Y);
+                Point pRightBorderStart = new Point(this.DisplayRectangle.Left + 5, this.DisplayRectangle.Height);
+                Pen wPen = new Pen(Color.Red, 1);
 
 
 
 
-            drawLeftBorder(e);
-            drawTBorder(e);
-            drawRightBorder(e);
-            drawBottomBorder(e);
+                drawLeftBorder(e);
+                drawTBorder(e);
+                drawRightBorder(e);
+                drawBottomBorder(e);
+            }
+
             base.OnPaint(e);
         }
 
+        private void drawResizeCorner(PaintEventArgs e, int x, int y, int height, int width)
+        {
+
+            Rectangle rectResizeCorner = new Rectangle(x, y, width, height);
+
+            Rectangle littleSquare = new Rectangle(x + 2, y + 2, 6, 6);
+            Rectangle bigSquare = new Rectangle(x + 8, y + 8, 7, 9);
+
+            e.Graphics.FillRectangle(globalMig.stdWhiteBrush, rectResizeCorner);
+
+            e.Graphics.FillRectangle(globalMig.stdBlueBrush, new Rectangle(x + 3, y + 3, 6, 6));
+            e.Graphics.FillRectangle(globalMig.stdWhiteBrush, new Rectangle(x + 4, y + 4, 4, 4));
+
+
+            e.Graphics.FillRectangle(globalMig.stdBlueBrush, new Rectangle(x + 8, y + 8, 7, 8));
+            e.Graphics.FillRectangle(globalMig.stdWhiteBrush, new Rectangle(x + 9, y + 9, 5, 6));
+
+            //  e.Graphics.FillRectangle(globalMig.stdOrangeBrush, new Rectangle(x , y , width - 4, height - 4));
+
+            //e.Graphics.FillRectangle(globalMig.stdWhiteBrush, new Rectangle(x + 4, y + 4, width - 8, height - 8));
+            //e.Graphics.FillRectangle(globalMig.stdBlackBrush, new Rectangle(x + 8, y + 8, width - 16, height - 16));
+
+
+        }
 
         protected void drawLeftBorder(PaintEventArgs e)
         {
@@ -177,7 +225,10 @@ namespace migControls
                 e.Graphics.FillRectangle(globalMig.stdWhiteBrush, littleRightNub);
             }
 
-
+            if (showResizeCorner)
+            {
+                drawResizeCorner(e, this.DisplayRectangle.Width - barButtonHeight, this.DisplayRectangle.Height - barButtonHeight, barButtonHeight, barButtonHeight);
+            }
 
 
 
@@ -299,14 +350,23 @@ namespace migControls
 
         protected override void WndProc(ref Message m)
         {
+
+            if (globalMig.loadBoringWindows)
+            {
+                base.WndProc(ref m);
+                return;
+            }
             const UInt32 WM_NCHITTEST = 0x0084;
             const UInt32 WM_MOUSEMOVE = 0x0200;
+            const UInt32 WM_NCMOUSEMOVE = 0x00A0;
             const UInt32 WM_NCMBUTTONDOWN = 0x00A7;
             const UInt32 WM_NCMBUTTONUP = 0x00A8;
             const UInt32 WM_LBUTTONDOWN = 0x0201;
             const UInt32 WM_LBUTTONUP = 0x0202;
             const UInt32 WM_NCLBUTTONDOWN = 0x00A1;
             const UInt32 WM_NCLBUTTONUP = 0x00A2;
+            const UInt32 WM_NCRBUTTONDOWN = 0x00A4;
+            const UInt32 WM_NCRBUTTONUP = 0x00A5;
             const UInt32 HTLEFT = 10;
             const UInt32 HTRIGHT = 11;
             const UInt32 HTBOTTOMRIGHT = 17;
@@ -320,6 +380,20 @@ namespace migControls
             const int Move_Handle_Size = 20;
             bool handled = false;
             bool handled2 = false;
+
+            if ((m.Msg == WM_NCMOUSEMOVE || m.Msg == WM_NCLBUTTONDOWN || m.Msg == WM_NCLBUTTONUP || m.Msg == WM_NCRBUTTONDOWN || m.Msg == WM_NCRBUTTONUP))
+            {
+                if (m.WParam.ToInt32() != HTTOP && m.WParam.ToInt32() != HTRIGHT && m.WParam.ToInt32() != HTBOTTOM && m.WParam.ToInt32() != HTLEFT)
+                {
+                    if (!globalMig.loadBoringWindows)
+                    {
+                        Cursor = globalMig.amiCur;
+
+                    }
+
+                }
+            }
+
             if (m.Msg == WM_LBUTTONUP || m.Msg == WM_NCLBUTTONUP)
             {
                 Size formSize = this.Size;
@@ -329,7 +403,7 @@ namespace migControls
 
                 if (rectExitButton != null && !Rectangle.Intersect(hitRect, rectExitButton).IsEmpty)
                 {
-                   
+
                     handled = true;
                     Close();
                 }
@@ -349,7 +423,7 @@ namespace migControls
 
                 if (rectMinTButton != null && !Rectangle.Intersect(hitRect, rectMinTButton).IsEmpty)
                 {
-                     
+
                     handled = true;
                     base.WindowState = FormWindowState.Minimized;
                 }
@@ -371,9 +445,9 @@ namespace migControls
 
                 Dictionary<UInt32, Rectangle> moveBoxes = new Dictionary<UInt32, Rectangle>() {
 
-             
+
             {HTTOP,   rectToolBar},
-             
+
 
         };
 
@@ -407,7 +481,7 @@ namespace migControls
 
 
 
-            if (!handled )
+            if (!handled)
             {
                 base.WndProc(ref m);
             }

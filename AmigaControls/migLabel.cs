@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using migControls;
-namespace TheNewDownloader
+namespace migControls
 {
     public class migLabel : Label
     {

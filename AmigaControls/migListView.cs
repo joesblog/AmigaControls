@@ -15,12 +15,13 @@ namespace migControls
     public class migListView : Panel
     {
         public delegate void LabelClickedEventHandler(object sender, migListViewLabelEventArgs e);
-        public event LabelClickedEventHandler OnLabelClicked; 
-        public List<ListViewItem> Items { get; set; }
+        public event LabelClickedEventHandler OnLabelClicked;
+        public List<migListViewItem> Items { get; set; }
         public Panel innerPanel { get; set; }
         public CustomScrollbar customScrollbar1 { get; set; }
+        public bool singleCol { get; set; }
 
-    
+
         private int _margin;
         public int gMargin
         {
@@ -93,6 +94,18 @@ namespace migControls
         }
 
 
+        public class migListViewItem
+        {
+            public migListViewItem() { }
+            public migListViewItem(string text)
+            {
+                this.Text = text;
+            }
+         public   string Text { get; set; }
+            public object obj { get; set; }
+            public object[] otherData { get; set; }
+        }
+
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
@@ -115,8 +128,8 @@ namespace migControls
                 innerPanel = new Panel();
                 innerPanel.BorderStyle = BorderStyle.None;
                 this.AutoScroll = false;
-               
-              
+
+
                 innerPanel.Layout += InnerPanel_Layout;
                 this.HorizontalScroll.Enabled = false;
                 this.HorizontalScroll.Visible = false;
@@ -129,7 +142,7 @@ namespace migControls
                 customScrollbar1 = new CustomScrollbar();
                 innerPanel.Left += 1;
                 innerPanel.Top += 1;
-                innerPanel.Height -= 2;
+                innerPanel.Height = this.DisplayRectangle.Height - 5;
                 innerPanel.Width = this.DisplayRectangle.Width + 20;
                 customScrollbar1.topText = this.topText;
                 customScrollbar1.botText = this.botText;
@@ -171,6 +184,7 @@ namespace migControls
 
             // e.Graphics.FillRectangle(globalMig.stdOrangeBrush, innerRect);
         }
+
         private void InnerPanel_Layout(object sender, LayoutEventArgs e)
         {
 
@@ -192,7 +206,7 @@ namespace migControls
 
             int count = 0;
             int itemRowLimit = (e.AffectedControl.DisplayRectangle.Width) / (reqWidth + gMargin);
-
+            if (singleCol) itemRowLimit = 1;
             int itemsInRow = 0;
             int row = 0;
             foreach (var i in Items)
@@ -204,7 +218,7 @@ namespace migControls
 
 
                 nlabl.Text = i.Text;
-
+                nlabl.Data = i.obj ?? null;
                 e.AffectedControl.Controls.Add(nlabl);
                 if (count != 0)
                 {
@@ -270,11 +284,11 @@ namespace migControls
                 {
                     migListView grpar = (migListView)this.Parent.Parent;
                     grpar.labelClickBubble(this);
-               
-                  
+
+
 
                 }
-                  
+
                 base.OnClick(e);
             }
 

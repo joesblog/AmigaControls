@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.migLabel1 = new TheNewDownloader.migLabel();
+            this.migLabel1 = new migControls.migLabel();
             this.mbtnExample = new migControls.migButton();
             this.migTextBox1 = new migControls.migTextBox();
             this.migListView1 = new migControls.migListView();
             this.migCheckbox1 = new AmigaControls.migCheckbox();
-            this.migRadioButton1 = new AmigaControls.migRadioButton();
-            this.migRadioButton2 = new AmigaControls.migRadioButton();
+            this.migRadioButton1 = new migControls.migRadioButton();
+            this.migRadioButton2 = new migControls.migRadioButton();
             this.SuspendLayout();
             // 
             // migLabel1
@@ -135,13 +135,13 @@
 
         #endregion
 
-        private TheNewDownloader.migLabel migLabel1;
+        private migControls.migLabel migLabel1;
         private migControls.migButton mbtnExample;
         private migControls.migTextBox migTextBox1;
         private migControls.migListView migListView1;
         private AmigaControls.migCheckbox migCheckbox1;
-        private AmigaControls.migRadioButton migRadioButton1;
-        private AmigaControls.migRadioButton migRadioButton2;
+        private migControls.migRadioButton migRadioButton1;
+        private migControls.migRadioButton migRadioButton2;
     }
 }
 

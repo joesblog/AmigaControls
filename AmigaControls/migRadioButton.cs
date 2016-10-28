@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AmigaControls
+namespace migControls
 {
 
    
@@ -47,7 +47,7 @@ namespace AmigaControls
 
             boxRectangle = new Rectangle(0, 0, boxSize, boxSize);
 
-            pevent.Graphics.Clear(migControls.globalMig.stdBlue);
+            pevent.Graphics.Clear(migControls.globalMig.stdColorBlue);
             //pevent.Graphics.FillEllipse()
             pevent.Graphics.FillEllipse(globalMig.stdWhiteBrush, boxRectangle);
             pevent.Graphics.FillEllipse(globalMig.stdBlueBrush, Rectangle.Inflate(boxRectangle, -2, -2));

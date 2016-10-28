@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AmigaControls
+namespace migControls
 {
     public class migCheckbox : CheckBox
     {
@@ -37,7 +37,7 @@ namespace AmigaControls
         {
 
             Size textSize = TextRenderer.MeasureText(this.Text, globalMig.topaz_std12);
-            Size nSize = new Size(textSize.Width + boxSize + marginSize, textSize.Height);
+            Size nSize = new Size(textSize.Width + boxSize + marginSize +10, textSize.Height);
             this.Size = nSize;
 
             base.OnCreateControl();
@@ -45,11 +45,17 @@ namespace AmigaControls
         protected override void OnPaint(PaintEventArgs pevent)
         {
 
+            if (globalMig.loadBoringWindows)
+            {
+                base.OnPaint(pevent);
+                return;
+            }
+
             Size textSize = TextRenderer.MeasureText(this.Text, globalMig.topaz_std12);
 
             boxRectangle = new Rectangle(0, 0, boxSize, boxSize);
 
-            pevent.Graphics.Clear(migControls.globalMig.stdBlue);
+            pevent.Graphics.Clear(migControls.globalMig.stdColorBlue);
 
             pevent.Graphics.FillRectangle(globalMig.stdWhiteBrush, boxRectangle);
             pevent.Graphics.FillRectangle(globalMig.stdBlueBrush, Rectangle.Inflate(boxRectangle, -2, -2));

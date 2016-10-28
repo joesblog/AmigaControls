@@ -11,50 +11,114 @@ using System.Runtime.InteropServices;
 
 namespace migControls
 {
-    public  class migTextBox : Panel
+    public class migTextBox : Panel
     {
 
         public delegate void TextChangedHandler(object sender, EventArgs e);
+        public delegate void TextBoxClickHandler(object sender, EventArgs e);
+        public event TextBoxClickHandler onInnerTextClicked;
         public event TextChangedHandler OnInnerTextChanged;
-        private Color _NormalBorderColor = Color.Gray;
-        private Color _FocusBorderColor = Color.Red;
+  
 
-        public TextBox EditBox;
+        public TextBox EditBox { get; set; }
 
-        public string ebText { get {
+
+     public int? borderThickness { get; set; }
+
+        public bool hideMigBorder { get; set; }
+
+        private static Padding defPadding = new Padding(2);
+
+        public bool isSetPadding = false;
+
+        [Description("inner panel padding"), Category("Layout")]
+     
+        public Padding Pad
+        {
+         get {
+                if (!isSetPadding)
+                {
+                   
+                    this.Padding = defPadding;
+                }
+                return this.Padding; }
+            set { this.Padding = value; isSetPadding = true; }
+        }
+        public bool test;
+
+   
+        public bool readOnly { get { return EditBox.ReadOnly;  } set { EditBox.ReadOnly = value; } }
+
+        [Description("inner panel dock"), Category("Layout")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        [DefaultValue(DockStyle.Fill)]
+        public DockStyle innerDock
+        {
+            get {
+                return EditBox.Dock;
+            }
+            set
+            {
+                EditBox.Dock = value;
+            }
+        }
+        public string ebText
+        {
+            get
+            {
                 if (EditBox != null)
                 {
                     return EditBox.Text;
                 }
-                else {
+                else
+                {
                     return "";
                 }
-            } set {
+            }
+            set
+            {
 
                 if (EditBox != null)
                 {
                     EditBox.Text = value;
                 }
-            } }
+            }
+        }
         public bool MultiLine { get; set; }
         public migTextBox()
         {
             this.DoubleBuffered = true;
-            this.Padding = new Padding(2);
-
+            this.Padding = new Padding(8);
             EditBox = new TextBox();
             EditBox.AutoSize = false;
             EditBox.BorderStyle = BorderStyle.None;
+            
             EditBox.Dock = DockStyle.Fill;
+            
             EditBox.Enter += new EventHandler(EditBox_Refresh);
             EditBox.Leave += new EventHandler(EditBox_Refresh);
             EditBox.Resize += new EventHandler(EditBox_Refresh);
             EditBox.TextChanged += EditBox_TextChanged;
             globalMig.LoadFont();
-            EditBox.Font = globalMig.topaz_std12;
-            EditBox.BackColor = globalMig.stdBlue;
-            EditBox.ForeColor = Color.White;
-            EditBox.BorderStyle = BorderStyle.None;
+
+            if (!globalMig.loadBoringWindows)
+            {
+                this.BackColor = globalMig.stdColorBlue;
+
+                EditBox.Font = globalMig.topaz_std12;
+                EditBox.BackColor = globalMig.stdColorBlue;
+                EditBox.ForeColor = globalMig.stdColorWhite;
+                EditBox.BorderStyle = BorderStyle.None;
+
+
+            }
+            else {
+                EditBox.BorderStyle = BorderStyle.FixedSingle;
+
+            }
+
+
+            EditBox.Click += (sender, e) => { onInnerTextClicked?.Invoke(sender, e); };
             this.Controls.Add(EditBox);
         }
 
@@ -69,23 +133,41 @@ namespace migControls
         protected override void OnCreateControl()
         {
             EditBox.Multiline = this.MultiLine;
-           
+
             base.OnCreateControl();
         }
 
         private void EditBox_Refresh(object sender, EventArgs e)
         {
-            
+
             this.Invalidate();
         }
 
+
+
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.Clear(SystemColors.Window);
-           
-                e.Graphics.DrawRectangle(globalMig.stdWhitePen, new Rectangle(0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1));
-           
-            base.OnPaint(e);
+
+            if (globalMig.loadBoringWindows)
+            {
+                base.OnPaint(e);
+                return;
+            }
+         //   e.Graphics.Clear(SystemColors.Window);
+            Rectangle nRect = new Rectangle();
+            nRect = Rectangle.Inflate(this.ClientRectangle, -2, -2);
+
+            e.Graphics.FillRectangle(globalMig.stdOrangeBrush, nRect);
+
+            Pen cpen = globalMig.stdWhitePen;
+            if (borderThickness.HasValue)
+            {
+                cpen.Width = borderThickness.Value;
+            }
+
+                e.Graphics.DrawRectangle(cpen, new Rectangle(0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1));
+            e.Graphics.FillRectangle(globalMig.stdBlueBrush, new Rectangle(2, 2, this.ClientSize.Width - 4, this.ClientSize.Height - 4));
+            // base.OnPaint(e);
         }
     }
 }

@@ -18,3 +18,13 @@ C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplic
 C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Form1.resources
 C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Properties.Resources.resources
 C:\vs2015\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.csproj.GenerateResource.Cache
+C:\VS2015\AmigaControls\ExampleApplication\bin\Debug\ExampleApplication.exe
+C:\VS2015\AmigaControls\ExampleApplication\bin\Debug\ExampleApplication.pdb
+C:\VS2015\AmigaControls\ExampleApplication\bin\Debug\AmigaControls.dll
+C:\VS2015\AmigaControls\ExampleApplication\bin\Debug\AmigaControls.pdb
+C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.csprojResolveAssemblyReference.cache
+C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Form1.resources
+C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Properties.Resources.resources
+C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.csproj.GenerateResource.Cache
+C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.exe
+C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.pdb

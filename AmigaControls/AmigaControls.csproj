@@ -78,6 +78,9 @@
     <Compile Include="migRadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="migPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="migTabContainer.cs">
       <SubType>Component</SubType>
     </Compile>

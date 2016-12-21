@@ -32,7 +32,7 @@
             this.mbtnExample = new migControls.migButton();
             this.migTextBox1 = new migControls.migTextBox();
             this.migListView1 = new migControls.migListView();
-            this.migCheckbox1 = new AmigaControls.migCheckbox();
+            this.migCheckbox1 = new migControls.migCheckbox();
             this.migRadioButton1 = new migControls.migRadioButton();
             this.migRadioButton2 = new migControls.migRadioButton();
             this.SuspendLayout();
@@ -139,7 +139,7 @@
         private migControls.migButton mbtnExample;
         private migControls.migTextBox migTextBox1;
         private migControls.migListView migListView1;
-        private AmigaControls.migCheckbox migCheckbox1;
+        private migControls.migCheckbox migCheckbox1;
         private migControls.migRadioButton migRadioButton1;
         private migControls.migRadioButton migRadioButton2;
     }

@@ -38,11 +38,11 @@ Integer malesuada commodo nulla.";
 
         private void mbtnExample_Click(object sender, EventArgs e)
         {
-            migListView1.Items = new List<ListViewItem>();
+            migListView1.Items = new List<migControls.migListView.migListViewItem>();
 
             foreach (string i in exampleList.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
             {
-                migListView1.Items.Add(new ListViewItem(i));
+                migListView1.Items.Add(new migControls.migListView.migListViewItem(i));
             }
             migListView1.itemsBound();
         }

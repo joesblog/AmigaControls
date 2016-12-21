@@ -59,7 +59,8 @@ namespace migControls
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.BackColor = globalMig.stdColorBlue;
             }
-            else {
+            else
+            {
                 this.FormBorderStyle = FormBorderStyle.Sizable;
                 this.BackColor = System.Drawing.SystemColors.Control;
             }
@@ -394,6 +395,13 @@ namespace migControls
                 }
             }
 
+            if (m.Msg == 0x0112) //wm_syscmd
+            {
+                if (m.WParam == new IntPtr(0xF030)) // Maximize event - SC_MAXIMIZE from Winuser.h
+                {
+                    int asdfsaf = 55;
+                }
+            }
             if (m.Msg == WM_LBUTTONUP || m.Msg == WM_NCLBUTTONUP)
             {
                 Size formSize = this.Size;
@@ -413,11 +421,14 @@ namespace migControls
                     if (base.WindowState == FormWindowState.Normal)
                     {
                         m.Result = (IntPtr)(HT_CAPTION);
+                     
                         base.WindowState = FormWindowState.Maximized;
+                        
                     }
                     else
                     {
                         base.WindowState = FormWindowState.Normal;
+                  
                     }
                 }
 
@@ -490,10 +501,13 @@ namespace migControls
             }
 
         }
+
+        
         protected override void OnMaximizedBoundsChanged(EventArgs e)
         {
 
             this.Invalidate(true);
+    
             base.OnMaximizedBoundsChanged(e);
         }
 
@@ -501,21 +515,25 @@ namespace migControls
         {
 
             this.Invalidate(true);
+          
             base.OnMaximumSizeChanged(e);
         }
 
         protected override void OnSizeChanged(EventArgs e)
         {
             this.Invalidate(true);
-
+          
             base.OnSizeChanged(e);
         }
         protected override void OnResizeEnd(EventArgs e)
         {
             this.Invalidate(true);
-
+          
             base.OnResizeEnd(e);
         }
 
+        public delegate void AResizeHandler(EventArgs e);
+        public event AResizeHandler AResize;
+         
     }
 }

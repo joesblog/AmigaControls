@@ -29,3 +29,4 @@ C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.dll
 C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.pdb
 C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.migFolderDialog.resources
 C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.migRequester.resources
+C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csprojResolveAssemblyReference.cache

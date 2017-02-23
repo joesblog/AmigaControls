@@ -28,3 +28,5 @@ C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.Properti
 C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.csproj.GenerateResource.Cache
 C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.exe
 C:\VS2015\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.pdb
+D:\_2017\VS\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.exe
+D:\_2017\VS\AmigaControls\AmigaControls\ExampleApplication\obj\Debug\ExampleApplication.pdb

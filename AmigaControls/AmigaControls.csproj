@@ -50,6 +50,18 @@
     </Compile>
     <Compile Include="dialogs\Dialogs.cs" />
     <Compile Include="dialogs\folderDialog.cs" />
+    <Compile Include="dialogs\migFileLoadDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialogs\migFileLoadDialog.Designer.cs">
+      <DependentUpon>migFileLoadDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dialogs\migFileSaveDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialogs\migFileSaveDialog.Designer.cs">
+      <DependentUpon>migFileSaveDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="dialogs\migFolderDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,12 @@
   <ItemGroup>
     <EmbeddedResource Include="CustomScrollbar.resx">
       <DependentUpon>CustomScrollbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dialogs\migFileLoadDialog.resx">
+      <DependentUpon>migFileLoadDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dialogs\migFileSaveDialog.resx">
+      <DependentUpon>migFileSaveDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dialogs\migFolderDialog.resx">
       <DependentUpon>migFolderDialog.cs</DependentUpon>

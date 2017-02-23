@@ -30,3 +30,17 @@ C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.pdb
 C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.migFolderDialog.resources
 C:\VS2015\AmigaControls\AmigaControls\obj\Debug\migControls.migRequester.resources
 C:\VS2015\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csprojResolveAssemblyReference.cache
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\bin\Debug\AmigaControls.dll
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\bin\Debug\AmigaControls.pdb
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\migControls.CustomScrollbar.resources
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\migControls.migFolderDialog.resources
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\migControls.migRequester.resources
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\migControls.migButton.resources
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\migControls.migListView.resources
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.miscResources.resources
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csproj.GenerateResource.Cache
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.dll
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.pdb
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\migControls.migFileSaveDialog.resources
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\migControls.migFileLoadDialog.resources
+D:\_2017\VS\AmigaControls\AmigaControls\AmigaControls\obj\Debug\AmigaControls.csprojResolveAssemblyReference.cache

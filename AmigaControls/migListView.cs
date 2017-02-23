@@ -101,6 +101,18 @@ namespace migControls
             {
                 this.Text = text;
             }
+            public migListViewItem(string _text, string _tag)
+            {
+                this.Text = _text; this.tag = _tag;
+            }
+            public migListViewItem(string _text, string _tag,string _tag2)
+            {
+                this.Text = _text; this.tag = _tag; this.tag2 = _tag2;
+            }
+
+            public string tag { get; set; }
+
+            public string tag2 { get; set; }
          public   string Text { get; set; }
             public object obj { get; set; }
             public object[] otherData { get; set; }
@@ -214,9 +226,10 @@ namespace migControls
                 migLVLabel nlabl = new migLVLabel();
                 nlabl.scIndex = count;
 
-
-
-
+                nlabl.italic = i.tag == "FILE";
+                nlabl.Tag = i.tag;
+                nlabl.tag2 = i.tag2;
+              
                 nlabl.Text = i.Text;
                 nlabl.Data = i.obj ?? null;
                 e.AffectedControl.Controls.Add(nlabl);
@@ -254,6 +267,11 @@ namespace migControls
 
             public int x { get; set; }
             public int y { get; set; }
+
+            public bool italic { get; set; }
+            public bool bold { get; set; }
+
+            public string tag2 { get; set; }
 
             public object Data { get; set; }
 
@@ -321,14 +339,19 @@ namespace migControls
 
             protected override void OnPaint(PaintEventArgs e)
             {
-                Size sx = TextRenderer.MeasureText(this.Text, globalMig.topaz_std12);
+
+                Font fontToUse = globalMig.topaz_std12;
+
+                if (this.italic) fontToUse = globalMig.topaz_std12_italic;
+
+                Size sx = TextRenderer.MeasureText(this.Text, fontToUse);
 
                 if (sx.Width > this.Parent.Parent.DisplayRectangle.Width)
                 {
                     //apply wrapping
                     StringFormat fmt = new StringFormat(StringFormatFlags.NoWrap);
                     Rectangle rc = new Rectangle(0, 0, this.Parent.Parent.DisplayRectangle.Width - 200, 200);
-                    e.Graphics.DrawString(this.Text, globalMig.topaz_std12, this.whatBrush, rc, fmt);
+                    e.Graphics.DrawString(this.Text, fontToUse, this.whatBrush, rc, fmt);
 
 
                 }
@@ -336,7 +359,7 @@ namespace migControls
                 {
                     int xpos = (this.DisplayRectangle.Width / 2) - (sx.Width / 2);
                     int ypos = (this.DisplayRectangle.Height / 2) - (sx.Height / 2);
-                    e.Graphics.DrawString(this.Text, globalMig.topaz_std12, this.whatBrush, 0, ypos);
+                    e.Graphics.DrawString(this.Text, fontToUse, this.whatBrush, 0, ypos);
                 }
 
                 //   base.OnPaint(e);
@@ -352,8 +375,12 @@ namespace migControls
             {
                 this.Data = label.Data;
                 this.Name = label.Text;
+                this.tag = (string)label.Tag;
+                this.tag2 = label.tag2;
             }
             public string Name { get; private set; }
+            public string tag { get; private set; }
+            public string tag2 { get; private set; }
             public object Data { get; private set; }
         }
     }

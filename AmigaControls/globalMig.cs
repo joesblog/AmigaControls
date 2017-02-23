@@ -86,8 +86,14 @@ namespace migControls
         public static PrivateFontCollection fonts;
 
         public static Font topaz_std12;
+        public static Font topaz_std12_italic;
+
         public static Font topaz_std14;
+        public static Font topaz_std14_italic;
+
         public static Font topaz_std10;
+        public static Font topaz_std10_italic;
+
         public static IntPtr fontBuffer;
         internal static Color stdColorOrange = Color.Orange;
         internal static Pen stdBlackPen = new Pen(stdBlackBrush);
@@ -135,6 +141,11 @@ namespace migControls
                 topaz_std12 = new Font(globalMig.fonts.Families[0], 12);
 
                 topaz_std10 = new Font(globalMig.fonts.Families[0], 10);
+
+                topaz_std14_italic = new Font(globalMig.fonts.Families[0], 14,FontStyle.Italic);
+                topaz_std12_italic = new Font(globalMig.fonts.Families[0], 12,FontStyle.Italic);
+
+                topaz_std10_italic = new Font(globalMig.fonts.Families[0], 10, FontStyle.Italic);
             }
 
         }

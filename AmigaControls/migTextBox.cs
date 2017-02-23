@@ -11,13 +11,18 @@ using System.Runtime.InteropServices;
 
 namespace migControls
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class migTextBox : Panel
     {
 
         public delegate void TextChangedHandler(object sender, EventArgs e);
         public delegate void TextBoxClickHandler(object sender, EventArgs e);
+        public delegate void TextBoxKeyUpHandler(object sender, EventArgs e);
         public event TextBoxClickHandler onInnerTextClicked;
         public event TextChangedHandler OnInnerTextChanged;
+        public event TextBoxKeyUpHandler onInnerTextKeyUp;
   
 
         public TextBox EditBox { get; set; }
@@ -99,6 +104,7 @@ namespace migControls
             EditBox.Leave += new EventHandler(EditBox_Refresh);
             EditBox.Resize += new EventHandler(EditBox_Refresh);
             EditBox.TextChanged += EditBox_TextChanged;
+            EditBox.KeyUp += EditBox_KeyUp;
             globalMig.LoadFont();
 
             if (!globalMig.loadBoringWindows)
@@ -120,6 +126,15 @@ namespace migControls
 
             EditBox.Click += (sender, e) => { onInnerTextClicked?.Invoke(sender, e); };
             this.Controls.Add(EditBox);
+        }
+
+        private void EditBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (onInnerTextKeyUp != null)
+            {
+                EventArgs e2 = new EventArgs();
+                onInnerTextKeyUp(EditBox, e2);
+            }
         }
 
         private void EditBox_TextChanged(object sender, EventArgs e)
